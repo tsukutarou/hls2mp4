@@ -28,4 +28,4 @@ ClipboxやKingboxなどのアプリケーションでダウンロードした動
 
 Email: email[at]tsukutarou.net
 
-Page: <a href="https://www.tsukutarou.net">https://www.tsukutarou.net</a>
+Blog: <a href="https://www.tsukutarou.net">https://www.tsukutarou.net</a>
