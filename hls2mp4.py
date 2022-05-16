@@ -53,7 +53,7 @@ def hls2mp4(filePath):
 if __name__=="__main__":
 
      #変換したい.hlsファイルのパス
-     hlsPath = "D://Music//niconico//【ミクリンGUMI】神のまにまに【オリジナル】 - ニコニコ動画.hls"
+     hlsPath = "ここパスを記述"
 
      #実行
      hls2mp4(hlsPath)
