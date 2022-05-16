@@ -24,19 +24,29 @@ def hls2mp4(filePath):
          if not os.path.exists(tempDir):
              os.mkdir(tempDir)
 
-         #.m3u8ファイルと.tsファイル群を展開
-         dst = dst+".zip"
-         shutil.copy(src,dst)
-         shutil.unpack_archive(dst,tempDir)
+         try:
+             #.m3u8ファイルと.tsファイル群を展開
+             dst = dst+".zip"
+             shutil.copy(src,dst)
+             shutil.unpack_archive(dst,tempDir)
 
-         #変換を実行
-         index_m3u8 = glob.glob(f"{tempDir}/*.m3u8")[0]
-         cmd = f"./ffmpeg/ffmpeg.exe -allowed_extensions ALL -i \"{index_m3u8}\" -c copy \"{savePath}\""
-         subprocess.run(cmd)
+             #変換を実行
+             index_m3u8 = glob.glob(f"{tempDir}/*.m3u8")[0]
+             cmd = f"./ffmpeg/ffmpeg.exe -allowed_extensions ALL -i \"{index_m3u8}\" -loglevel fatal -c copy \"{savePath}\""
+             subprocess.run(cmd)
 
-         #一時ファイルの削除
-         shutil.rmtree(tempDir)
+             #一時ファイルの削除
+             shutil.rmtree(tempDir)
+         finally:
+             messageFine = f"""
+     {src}
+             |
+             V
+     {savePath}
 
+変換は正常に完了しました。
+             """
+             print(messageFine)
 
 if __name__=="__main__":
 
