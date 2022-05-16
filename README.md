@@ -12,7 +12,7 @@ ClipboxやKingboxなどのアプリケーションでダウンロードした動
 
 このプログラムを実行するためには、ffmpegというフリーソフトが必要となります。
 
-こちらからffmpeg.exeをダウンロードして、`./ffmpeg/ffmpeg.exe`となるように配置してください。
+<a href="https://github.com/GyanD/codexffmpeg/releases">こちら</a>から`ffmpeg-(バージョン)-full_build.zip`をダウンロード・解凍し、`bin`内の`ffmpeg.exe`をコピーして`hls2mp4/ffmpeg/ffmpeg.exe`となるように配置してください。
 
 # .mp4動画の上書き保存について
 
