@@ -19,3 +19,13 @@ ClipboxやKingboxなどのアプリケーションでダウンロードした動
 変換元の.hlsのあるディレクトリに既に同じ名前で拡張子違いの.mp4動画がある場合、<b>その動画ファイルが上書きされる形で変換後の.mp4ファイルが保存されます。</b>
 
 上書きしたくない場合はあらかじめ名前を変えるなどして対処してください。
+
+***
+
+## 製作者
+
+<b>Tsukutarou / つくたろう</b>
+
+Email: email[at]tsukutarou.net
+
+Page: <a href="https://www.tsukutarou.net">https://www.tsukutarou.net</a>
