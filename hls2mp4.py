@@ -32,7 +32,7 @@ def hls2mp4(filePath):
 
              #変換を実行
              index_m3u8 = glob.glob(f"{tempDir}/*.m3u8")[0]
-             cmd = f"./ffmpeg/ffmpeg.exe -allowed_extensions ALL -i \"{index_m3u8}\" -loglevel fatal -c copy \"{savePath}\""
+             cmd = f"./ffmpeg/ffmpeg.exe -allowed_extensions ALL -y -i \"{index_m3u8}\" -loglevel fatal -c copy \"{savePath}\""
              subprocess.run(cmd)
 
              #一時ファイルの削除
@@ -47,6 +47,8 @@ def hls2mp4(filePath):
 変換は正常に完了しました。
              """
              print(messageFine)
+
+
 
 if __name__=="__main__":
 
