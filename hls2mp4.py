@@ -16,28 +16,25 @@ def hls2mp4(filePath):
      tempDir = os.path.dirname(filePath)+"/temp"
      dst,ext = os.path.splitext(os.path.join(tempDir+"/"+fileName))
 
-     print(src,dst,ext)
-
-     #.hlsファイルのときのみ処理を実行
+     #入力が.hlsファイルのときのみ処理を実行
      if not ext==".hls":
          print("Error: This is not \".hls\" file.")
          return
      else:
          if not os.path.exists(tempDir):
              os.mkdir(tempDir)
+
+         #.m3u8ファイルと.tsファイル群を展開
          dst = dst+".zip"
          shutil.copy(src,dst)
          shutil.unpack_archive(dst,tempDir)
 
-         print(tempDir)
-
+         #変換を実行
          index_m3u8 = glob.glob(f"{tempDir}/*.m3u8")[0]
-         
-         print(index_m3u8)
-         
          cmd = f"./ffmpeg/ffmpeg.exe -allowed_extensions ALL -i \"{index_m3u8}\" -c copy \"{savePath}\""
          subprocess.run(cmd)
 
+         #一時ファイルの削除
          shutil.rmtree(tempDir)
 
 
